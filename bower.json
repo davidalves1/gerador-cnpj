@@ -1,0 +1,26 @@
+{
+  "name": "gerador-cnpj",
+  "description": "Gerador de CNPJ para ser utilizado em testes de sistemas",
+  "main": "main.js",
+  "authors": [
+    "David Alves <alves.david@outlook.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "cnpj",
+    "gerador",
+    "web",
+    "dev"
+  ],
+  "homepage": "davidalves1.github.io/gerador-cnpj",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
