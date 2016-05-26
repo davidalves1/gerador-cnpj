@@ -1,10 +1,33 @@
 @charset "UTF-8";
 
-* {
+:root {
     margin: 0;
     padding: 0;
 }
 
-p {
-    font-size: 18px;
+.card {
+    height: 250px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -125px;
+    margin-left: -150px;
+    border: 1px solid #EEE;
+
+    .card-header {
+        height: 100px;
+        background-color: #DDD;
+        padding: 10px;
+    }
+
+    .card-body {
+        height: 75px;
+        padding: 10px;
+    }
+
+    .card-footer {
+        height: 75px;
+        padding: 10px;
+    }
 }
