@@ -9,17 +9,19 @@
 <body>
     <div class="container" ng-controller="MainController as main">
         <div class="row">
-            <div class="card text-center">
-                <div class="card-header">
-                    <h2>Gerador de CNPJ</h2>
+            <div class="col-md-offset-4 col-md-4 col-sm-12">
+                <div class="card text-center">
+                    <div class="card-header">
+                        <h1>Gerador de CNPJ</h1>
+                    </div>
+                    <div class="card-body">
+                        <input type="text" id="txtCnpj" class="form-control text-center" ng-model="main.cnpj">
+                    </div>
+                    <div class="card-footer">
+                        <button id="btnCnpj" class="btn-card" ng-click="main.gerarCnpj()">Gerar CNPJ</button>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <input type="text" id="txtCnpj" class="form-control text-center" ng-model="main.cnpj">
-                </div>
-                <div class="card-footer">
-                    <button id="btnCnpj" class="btn btn-primary" ng-click="main.gerarCnpj()">Gerar CNPJ</button>
-                </div>
-            </div><!-- /.card-dialog -->
+            </div>
         </div>
     </div>
     <script src="libs/jquery/dist/jquery.min.js"></script>
