@@ -4,7 +4,19 @@ app.controller('MainController', function() {
 
     var vm = this;
 
-    vm.nome = 'David Alves de Souza';
+    vm.cnpj = '';
+
+    vm.formatarCnpj = false;
+
+    // vm.alterarFormatacao = function() {
+    //     return vm.cnpj = vm.cnpj.slice(0, 2) + '.'
+    //         + vm.cnpj.slice(2, 5) + '.'
+    //         + vm.cnpj.slice(5, 8) + '/'
+    //         + vm.cnpj.slice(8, 12) + '-'
+    //         + vm.cnpj.slice(12, 14);
+    // }
+
+    console.log('cnpj: ' + vm.cnpj);
 
     vm.gerarCnpj = function() {
         var arr = [];
@@ -61,5 +73,19 @@ app.controller('MainController', function() {
 
         // Exibe o cnpj no campo
         return vm.cnpj = arr.join('');
+    }
+});
+
+app.filter('cnpj', function() {
+    return function(formtado, cnpj) {
+        if (formatado && cnpj != '') {
+            return cnpj.slice(0, 2) + '.'
+                    + cnpj.slice(2, 5) + '.'
+                    + cnpj.slice(5, 8) + '/'
+                    + cnpj.slice(8, 12) + '-'
+                    + cnpj.slice(12, 14);
+        } else {
+            return cnpj.replace(/\D/, '');
+        }
     }
 });
