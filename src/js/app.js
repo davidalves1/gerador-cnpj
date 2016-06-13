@@ -64,12 +64,22 @@ app.controller('MainController', ['$scope', function($scope) {
         // Exibe o cnpj no campo
         vm.cnpj = arr.join('');
 
-        if (vm.formatarCnpj === true) {
+        if (vm.chkFormatarCnpj === true) {
             vm.cnpj = vm.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
         }
     }
 
-    vm.formatarCnpj = false;
+    vm.formatarCnpj = formatarCnpj;
+
+    function formatarCnpj() {
+        if (vm.chkFormatarCnpj === true) {
+            vm.cnpj = vm.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
+        } else {
+            vm.cnpj = vm.cnpj.replace(/\D/g, '');
+        }
+    }
+
+    vm.chkFormatarCnpj = false;
 }]);
 
 
