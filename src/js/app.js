@@ -1,22 +1,12 @@
+'use strict';
+
 var app = angular.module('cnpjApp', []);
 
-app.controller('MainController', function() {
+app.controller('MainController', ['$scope', function($scope) {
 
     var vm = this;
 
     vm.cnpj = '';
-
-    vm.formatarCnpj = false;
-
-    // vm.alterarFormatacao = function() {
-    //     return vm.cnpj = vm.cnpj.slice(0, 2) + '.'
-    //         + vm.cnpj.slice(2, 5) + '.'
-    //         + vm.cnpj.slice(5, 8) + '/'
-    //         + vm.cnpj.slice(8, 12) + '-'
-    //         + vm.cnpj.slice(12, 14);
-    // }
-
-    console.log('cnpj: ' + vm.cnpj);
 
     vm.gerarCnpj = function() {
         var arr = [];
@@ -72,20 +62,14 @@ app.controller('MainController', function() {
         arr.push(d2);
 
         // Exibe o cnpj no campo
-        return vm.cnpj = arr.join('');
-    }
-});
+        vm.cnpj = arr.join('');
 
-app.filter('cnpj', function() {
-    return function(formtado, cnpj) {
-        if (formatado && cnpj != '') {
-            return cnpj.slice(0, 2) + '.'
-                    + cnpj.slice(2, 5) + '.'
-                    + cnpj.slice(5, 8) + '/'
-                    + cnpj.slice(8, 12) + '-'
-                    + cnpj.slice(12, 14);
-        } else {
-            return cnpj.replace(/\D/, '');
+        if (vm.formatarCnpj === true) {
+            vm.cnpj = vm.cnpj.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
         }
     }
-});
+
+    vm.formatarCnpj = false;
+}]);
+
+
