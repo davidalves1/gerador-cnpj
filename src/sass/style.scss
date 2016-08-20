@@ -101,6 +101,17 @@ body {
     text-align: center;
 }
 
+.btn-custom {
+    height: 50px;
+    background-color: #DDD;
+
+    @include transition(all 0.3s ease-in-out);
+
+    &:hover {
+        background-color: #BBB;
+    }
+}
+
 /* Estilo do Github corner */
 .github-corner:hover .octo-arm {
     animation: octocat-wave 560ms ease-in-out

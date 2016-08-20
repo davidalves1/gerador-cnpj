@@ -7,6 +7,7 @@ app.controller('MainController', ['$scope', function($scope) {
     var vm = this;
 
     vm.cnpj = '';
+    new Clipboard('#clipboard');
 
     vm.gerarCnpj = function() {
         var arr = [];
