@@ -6,10 +6,15 @@ app.controller('MainController', ['$scope', function($scope) {
 
     var vm = this;
 
-    vm.cnpj = '';
+    vm.gerarCnpj = gerarCnpj;
+    vm.formatarCnpj = formatarCnpj;
+
+    // Gera o CNPJ ao entrar no site
+    vm.gerarCnpj();
+
     new Clipboard('#clipboard');
 
-    vm.gerarCnpj = function() {
+    function gerarCnpj() {
         var arr = [];
 
         // Define os caracteres variáveis
@@ -65,8 +70,6 @@ app.controller('MainController', ['$scope', function($scope) {
         // Exibe o cnpj no campo
         vm.cnpj = arr.join('');
     }
-
-    vm.formatarCnpj = formatarCnpj;
 
     function formatarCnpj() {
         if (vm.chkFormatarCnpj === true) {

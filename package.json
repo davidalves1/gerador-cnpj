@@ -1,7 +1,7 @@
 {
   "name": "gerador-cnpj",
   "version": "1.0.0",
-  "description": "Teste de aplicação do Gulp",
+  "description": "Gerador de CNPJ para testes em sistemas",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
